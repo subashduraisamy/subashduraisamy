@@ -1,0 +1,43 @@
+#1/bin/bash
+echo -e "Please choose one of the following"
+echo -e "Enter 6 to restart"
+echo -e "Enter 0 to shut down"
+
+read input
+
+case $input in
+
+  6)
+    echo -e "Do you want to restart the system"
+    echo -e "Please enter y/n"
+    read input1
+    if [ $input1 == 'y' ]
+        then
+           echo "Restarting the system"
+           sudo init 6
+    else [ $input == 'n' ]
+    
+        exit
+            
+            fi
+    ;;
+
+  0)
+    echo -e "Do you want to shutdown the system"
+    echo -e "Please enter y/n"
+    read input2
+    if [ $input2 == 'y' ]
+        then
+           echo "Shuttingdown the system"
+           sudo init 0
+           else [ $input == 'n' ]
+                 exit
+           
+           fi
+    ;;
+
+  *)
+    echo -n "Please input a correct value"
+    ;;
+
+esac
